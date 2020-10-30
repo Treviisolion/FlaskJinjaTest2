@@ -26,7 +26,7 @@ def show_question(question_num):
     if question_num != len(responses):
         flash("Wrong question number")
         return redirect(f'/questions/{len(responses)}')
-    elif question_num >= len(current_survey.questions):
+    elif question_num > len(current_survey.questions):
         flash("You've already taken the survey")
         return redirect('/end')
     else:
